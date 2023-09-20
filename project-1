@@ -34,3 +34,4 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined
 22- sudo systemctl reload apache2
 23- cd /var/www/projectlamp/
 24- git clone https://github.com/elmoatasem112/static-website-example.git
+https://github.com/mgfahmy/DevOps-Projects/issues/1#issue-1904933984
