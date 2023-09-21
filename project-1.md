@@ -1,8 +1,8 @@
 ## WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
 ### ASW account setup and provisioning an Ubuntu Server
 #### Steps
-## 1-Signed up for an AWS account.
-## 2-Logged in as IAM user
+# 1-Signed up for an AWS account.
+# 2-Logged in as IAM user
 3-In the VPC console, I create Security Group
 4-Launched an EC2 instance
 5-I selelected the Ubuntu free tier instance
