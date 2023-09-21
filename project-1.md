@@ -46,7 +46,7 @@
 ##### 4- sudo apche2ctl configtest
 ##### 5- sudo systemctl reload apache2
 
-### STEP 5 — ENABLE PHP ON THE WEBSITE
+### STEP 5 — release WEBSITE
 ## Steps
 ##### 1- cd /var/www/projectlamp/
 ##### 2- git clone https://github.com/elmoatasem112/static-website-example.git
