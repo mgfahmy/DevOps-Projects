@@ -1,14 +1,14 @@
 ## WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
 ### ASW account setup and provisioning an Ubuntu Server
 ## Steps
-#### 1-Signed up for an AWS account.
-#### 2-Logged in as IAM user
-#### 3-In the VPC console, I create Security Group
-4-Launched an EC2 instance
-5-I selelected the Ubuntu free tier instance
-6-I set the required configurations (Enabled public IP, security group, and key pair) and finally launched the instance.
-7-Next I SSH into the instance using Windows Terminal
-8-in cmd i enter "ssh -i ".ssh\mgfahmy.pem" ubuntu@ec2-16-16-211-80.eu-north-1.compute.amazonaws.com"
+##### 1-Signed up for an AWS account.
+##### 2-Logged in as IAM user
+##### 3-In the VPC console, I create Security Group
+##### 4-Launched an EC2 instance
+##### 5-I selelected the Ubuntu free tier instance
+##### 6-I set the required configurations (Enabled public IP, security group, and key pair) and finally launched the instance.
+##### 7-Next I SSH into the instance using Windows Terminal
+##### 8-in cmd i enter "ssh -i ".ssh\mgfahmy.pem" ubuntu@ec2-16-16-211-80.eu-north-1.compute.amazonaws.com"
 
 ### INSTALLING APACHE AND UPDATING THE FIREWALL
 #### Steps
