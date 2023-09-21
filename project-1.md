@@ -1,69 +1,37 @@
 ## WEB STACK IMPLEMENTATION (LAMP STACK) IN AWS
 ### ASW account setup and provisioning an Ubuntu Server
 #### Steps
-1. Signed up for an AWS account.
-2. Logged in as IAM user
-3. In the VPC console, I create Security Group
-![Project1pix2](https://user-images.githubusercontent.com/74002629/174605346-f0f4b1bc-0e4e-45f7-ac6e-6a49ae27600a.PNG)
-
-4. Launched an EC2 instance
-5. I selelected the Ubuntu free tier instance
-6. I set the required configurations (Enabled public IP, security group, and key pair) and finally launched the instance.
-![project1pix3](https://user-images.githubusercontent.com/74002629/174606543-32845537-efdd-4abe-a903-82a20f3bbb80.PNG)
-
-7. Next I SSH into the instance using Windows Terminal
-8. In the Terminal, I typed cd Downloads to navigate to the locxcation of my key-pair.
-9. Inside the Downloads directory, I connect to my instance using its Public DNS.
-![project1pix4](https://user-images.githubusercontent.com/74002629/174608684-dadf6c62-f32f-4abf-99bf-dd6078bcf279.PNG)
-![project1pix5](https://user-images.githubusercontent.com/74002629/174608722-755ce47c-4c8e-475c-a399-43e314235364.PNG)
+1-Signed up for an AWS account.
+2-Logged in as IAM user
+3-In the VPC console, I create Security Group
+4-Launched an EC2 instance
+5-I selelected the Ubuntu free tier instance
+6-I set the required configurations (Enabled public IP, security group, and key pair) and finally launched the instance.
+7-Next I SSH into the instance using Windows Terminal
+8-in cmd i enter "ssh -i ".ssh\mgfahmy.pem" ubuntu@ec2-16-16-211-80.eu-north-1.compute.amazonaws.com"
 
 ### INSTALLING APACHE AND UPDATING THE FIREWALL
 #### Steps
-1. Install Apache using Ubuntu’s package manager ‘apt', Run the following commands: To update a list of packages in package manager:
-**sudo apt update**
-![Project1pix6](https://user-images.githubusercontent.com/74002629/176584111-c2fd6d3e-d34a-49c1-854c-8ff272d7b7ca.PNG)
-
-2. To run apache2 package installation:
-**sudo apt install apache2**
-3. Next, verify that Apache2 is running as a service in the OS. run:
-**sudo systemctl status apache2**
-4. The green light indicates Apache2 is running.
-5. ![Project1pix8](https://user-images.githubusercontent.com/74002629/176584784-e6c1af68-19c6-4fdd-8551-10d1a223c33d.PNG)
-
-6. Open port 80 on the Ubuntu instance to allow access from the internet.
-7. Access the Apache2 service locally in our Ubuntu shell by running: 
-**curl http://localhost:80** or **curl http://127.0.0.1:80** This command would output the Apache2 payload indicating that it is accessible locally in the Ubuntu shell.
-8. Next, test that Apache HTTP server can respond to requests from the Internet. Open a browser and type the public IP of the Ubutun instance: **http://3.235.248.184/:80** This outputs the Apache2 default page.
-![Project1pix9](https://user-images.githubusercontent.com/74002629/176584558-a98ef686-4ea4-4df6-8d15-d695377c7d89.PNG)
+1- sudo apt update -y
+2- sudo apt install apache2 -y
+3- sudo systemctl status apache2
+4- curl http://localhost:80
 
 
 
 ### INSTALLING MYSQL
 #### Steps
-In this step, I install a Database Management System (DBMS) to be able to store and manage data for the site in a relational database.
-1. Run ‘apt’ to acquire and install this software, run: **sudo apt install mysql-server**
-2. Confirm intallation by typing Y when prompted.
-3. Once installation is complete, log in to the MySQL console by running: **sudo mysql**
-![Project1pix11](https://user-images.githubusercontent.com/74002629/176585224-e55ca7bb-73a7-464a-9172-7161ba5b434b.PNG)
-
-4. Next, run a security script that comes pre-installed with MySQL, to remove some insecure default settings and lock down access to your database system. run: 
-**ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'PassWord.1';** then exit MySQL shell by typing exit and enter.
-5. Run interactive script by typing: **sudo mysql_secure_installation** and following the instrustions.
-6. Next, test that login to MySQL console works. Run: **sudo mysql -p** 
-![Project1pix21](https://user-images.githubusercontent.com/74002629/176585784-48ef1dd3-049f-45d1-a7df-884764d14d22.PNG)
-
-7. Type exit and enter to exit console.
+1-sudo apt install mysql-server
+2- sudo mysql
+mysql> alter user 'root'@'localhost' identified with mysql_native_password by 'PassWord.1';
+mysql> exit
 
 ### STEP 3 — INSTALLING PHP
 #### Steps
 1. To install these 3 packages at once, run:
 **sudo apt install php libapache2-mod-php php-mysql**
-![Project1pix13](https://user-images.githubusercontent.com/74002629/176586557-cc03a8d5-bd3b-48c8-9942-92207da39e3f.PNG)
+**php -v**
 
-2. After installation is done, run the following command to confirm your PHP version: **php -v**
-![Project1pix14](https://user-images.githubusercontent.com/74002629/176586185-40638bfe-6f41-4af6-8d64-ae758b4090b8.PNG)
-
-4. At this point, your LAMP stack is completely installed and fully operational.
 
 ### STEP 4 — CREATING A VIRTUAL HOST FOR YOUR WEBSITE USING APACHE
 #### Steps
